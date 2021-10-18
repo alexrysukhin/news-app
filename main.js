@@ -113,6 +113,7 @@ searchButton.addEventListener('click', clickToSearch)
 // deleteInput()
 crossDelete.addEventListener('click', deleteInput)
 
+// ******enterSearch
 
 window.addEventListener('keyup', (e) => {
 	if (e.key == 'Enter' && input.value) {

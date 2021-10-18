@@ -32,7 +32,7 @@ function searchForSimilar() {
 		else { crossDelete.style.display = "none" }
 
 		if (noExact.classList.contains('no-exact__active')) noExact.classList.remove('no-exact__active')
-		let value = input.value;
+		let value = input.value.toLowerCase();
 		if (value.length > 1) {
 			for (let item of postsMap.values()) {
 				let itemLowercase = item.title.toLowerCase();
