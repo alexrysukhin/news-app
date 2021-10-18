@@ -1,0 +1,13 @@
+.list-of-pages{
+	width: 100%;
+	height: 100%;
+}
+.list-of-pages__item{
+	left: 0;
+	top: 0;
+	display: none;
+}
+.list-of-pages__item_active{
+	display: block
+}
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<header class="header">
+				<div class="header__holder-logo">
+					<a href="./home.html" class="header__logo">News App</a>
+				</div>
+
+				<label class="label-input">
+					<div class="no-exact">No exact matches found</div>
+					<a href="" class="input-button">
+						<img class="svg-holder" src="./drawing.svg" alt="">
+					</a>
+					<ul class="input-list">
+						<!-- <li class="input-list__item"></li> -->
+					</ul>
+					<input class="header__search" type="text" />
+					<div class="cross-delete">
+						<span class="cross-delete__line cross-delete__line_first"></span>
+						<span class="cross-delete__line cross-delete__line_second"></span>
+					</div>
+
+				</label>
+
+				<ul class="drop-down-nav">
+					<li class="categories drop-down-nav__item">
+						Categories
+						<ul class="drop-down-list">
+							<div class="transparent-bridge"></div>
+							<div class="drop-down-list__left">
+								<li category="Sport" class="drop-down-list__item">Sport</li>
+								<li category="World" class="drop-down-list__item">World</li>
+								<li category="Covid" class="drop-down-list__item">Covid</li>
+								<li category="Business" class="drop-down-list__item">Business</li>
+							</div>
+							<div class="drop-down-list__right">
+								<li category="Politics" class="drop-down-list__item">Politics</li>
+								<li category="Science" class="drop-down-list__item">Science</li>
+								<li category="Religion" class="drop-down-list__item">Religion</li>
+								<li category="Health" class="drop-down-list__item">Health</li>
+							</div>
+						</ul>
+					</li>
+					<li class="drop-down-nav__item drop-down-nav__trending"><span class="lighting-holder"><img
+								src="lightning.svg" alt=""></span>Trending news</li>
+				</ul>
+				<div class="header__burger">
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+				</div>
+			</header>
+			<main class="main-section">
+				<ul class="list-of-pages">
+					<li class="list-of-pages__item list-of-pages__item_active">
+						<div class="main-section__main-news-display">
+						</div>
+						<ul class="main-section__news-list">
+						</ul>
+					</li>
+					<li class="list-of-pages__item ">
+						<div class="second-page">
+						</div>
+					</li>
+				</ul>
+			</main>
+
+			<div class="empty">
+				<div class="button-top">
+					<span class="button-top__text">
+						Scroll to top
+					</span>
+					<img src="./arow-up.svg" alt="" class="button-top__image" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container">
+			<h3 class="copyright"><span class="bold-span">News App</span> 2021 copyright all rights reserved</h3>
+		</div>
+	</div>
+	<div class="preloader">
+		<div class="preloader__spiner">
+			<div class="preloader__animation"></div>
+		</div>
+	</div>
+	<script defer nc type="module" src="main.js">
+	</script>
+</body>
+
+</html>

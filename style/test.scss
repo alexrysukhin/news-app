@@ -1,0 +1,17 @@
+$title-color: #2D3748;
+$text-content-color:#718096;
+$viwing-date-color: #718096;
+
+@import "./sections/mixins.scss";
+@import "./sections/_adjustment.scss";
+@import "./sections/header.scss";
+@import "./sections/drop-down-nav.scss";
+@import "./sections/drop-down.scss";
+@import "./sections/burger.scss";
+@import "./sections/list-of-pages.scss";
+@import "./sections/main-news-display.scss";
+@import "./sections/news-list.scss";
+@import "./sections/post-contene.scss";
+@import "./sections/button-top.scss";
+@import "./sections/preloader.scss";
+@import "./sections/footer.scss";

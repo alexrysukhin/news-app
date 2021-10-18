@@ -1,0 +1,23 @@
+.button-top{
+	width: 141px;
+	background-color: #2F80ED;
+	padding: 11px;
+	align-items: center;
+	border-radius: 5px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+	margin-left: auto;
+} 
+.button-top:hover{
+	box-shadow: 0px 3px 10px rgb(112, 108, 108);
+}
+.button-top__text{
+	font-size: 16px;
+	font-weight: 700;
+	color: white;
+}
+
+.button-top__image{
+	width: 21px;
+}
