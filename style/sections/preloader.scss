@@ -7,7 +7,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   z-index: 3000;
+   z-index: 300;
    transition: 1s all;
    visibility: visible;
 	background: linear-gradient(45deg, white, rgb(235, 231, 231));
@@ -79,5 +79,6 @@
 	align-items: center;
 	font-size: 20px;
 	font-weight: 700;
-	box-shadow: 0px 0px 10px rgb(151, 146, 146)
+	box-shadow: 0px 0px 10px rgb(151, 146, 146);
+	z-index: 1000;
 }

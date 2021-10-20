@@ -12,18 +12,19 @@ import Post from './scripts/makePost.js';
 
 
 
-let noExact = document.querySelector('.no-exact');
-let searchButton = document.querySelector('.input-button');
-let mainDisplay = document.querySelector('.main-section__main-news-display');
-let newsList = document.querySelector('.main-section__news-list');
-let secondPage = document.querySelector('.second-page');
-let preloader = document.querySelector('.preloader');
-let inputList = document.querySelector('.input-list');
-let mainPages = Array.from(document.querySelectorAll('.list-of-pages__item'));
-let scrollToTop = document.querySelector('.button-top');
-let input = document.querySelector('.header__search');
-let crossDelete = document.querySelector('.cross-delete');
-let postsMap = new Map();
+const noExact = document.querySelector('.no-exact');
+const searchButton = document.querySelector('.input-button');
+const mainDisplay = document.querySelector('.main-section__main-news-display');
+const newsList = document.querySelector('.main-section__news-list');
+const secondPage = document.querySelector('.second-page');
+const preloader = document.querySelector('.preloader');
+const inputList = document.querySelector('.input-list');
+const mainPages = Array.from(document.querySelectorAll('.list-of-pages__item'));
+const scrollToTop = document.querySelector('.button-top');
+const input = document.querySelector('.header__search');
+const crossDelete = document.querySelector('.cross-delete');
+const itemList = document.querySelectorAll('.input-list__item');
+const postsMap = new Map();
 
 
 
@@ -41,7 +42,7 @@ function searchNews(category) {
 	document.body.style.overflow = "hidden";
 
 
-	fetch(`https://content.guardianapis.com/search?q=${category}&show-tags=all&page-size=21&show-fields=all&order-by=newest&api-key=0cc1c5bc-7fe4-47bc-80cc-f17c13be193c`)
+	fetch(`https://content.guardianapis.com/search?q=${category}&show-tags=all&page-size=20&show-fields=all&order-by=newest&api-key=0cc1c5bc-7fe4-47bc-80cc-f17c13be193c`)
 		.then((response) => response.json())
 		.then((result) => {
 			let newsArr = result.response.results;
@@ -109,12 +110,18 @@ searchForSimilar()
 searchButton.addEventListener('click', clickToSearch)
 
 
-
 // deleteInput()
 crossDelete.addEventListener('click', deleteInput)
 
 // ******enterSearch
-
+window.addEventListener('scroll', () => {
+	if (innerHeight / 2 < pageYOffset) {
+		scrollToTop.style.zIndex = '20'
+	}
+	else {
+		scrollToTop.style.zIndex = '-20'
+	}
+})
 window.addEventListener('keyup', (e) => {
 	if (e.key == 'Enter' && input.value) {
 		log(input.value)
@@ -123,4 +130,5 @@ window.addEventListener('keyup', (e) => {
 })
 
 
-export { searchNews, mainDisplay, newsList, postsMap, preloader, mainPages, secondPage, scrollToTop, input, inputList, searchButton, crossDelete, noExact }
+
+export { searchNews, mainDisplay, newsList, postsMap, preloader, mainPages, secondPage, scrollToTop, input, inputList, searchButton, crossDelete, noExact, itemList }

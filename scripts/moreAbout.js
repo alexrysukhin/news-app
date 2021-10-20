@@ -1,5 +1,6 @@
 import { postsMap, mainPages, secondPage, scrollToTop, input, inputList, searchButton, crossDelete, noExact, } from '../main.js';
-
+// import { checkListItems } from './checkListItems.js';
+import { convertLenguege } from './convertLenguege.js';
 
 
 function moreAbout(e) {
@@ -20,31 +21,41 @@ function moreAbout(e) {
 	window.scrollTo(0, 0);
 	input.value = '';
 	searchButton.removeAttribute('href')
-	// })
+
 
 }
 
 function searchForSimilar() {
 
 	input.addEventListener('input', (e) => {
-		inputList.innerHTML = '';
+
+		if (input.value == '') { inputList.innerHTML = '' };
+		input.value = convertLenguege(input.value);
+
 		if (input.value) { crossDelete.style.display = "block" }
 		else { crossDelete.style.display = "none" }
 
 		if (noExact.classList.contains('no-exact__active')) noExact.classList.remove('no-exact__active')
 		let value = input.value.toLowerCase();
+		let itemList = Array.from(document.querySelectorAll('.input-list__item'));
+
 		if (value.length > 1) {
+			inputList.innerHTML = '';
 			for (let item of postsMap.values()) {
 				let itemLowercase = item.title.toLowerCase();
-				if (itemLowercase.includes(value)) {
-					inputList.insertAdjacentHTML('beforeend', `<li class="input-list__item">${item.title}</li>`);
 
+				if (itemLowercase.includes(value)) {
+
+					inputList.insertAdjacentHTML('beforeend', `<li class="input-list__item">${item.title}</li>`);
 				}
 
 				else { continue }
 			}
+
 		}
+
 	})
+
 	inputList.addEventListener('click', (e) => {
 		input.value = e.target.innerHTML;
 		for (let [key, value] of postsMap.entries()) {
